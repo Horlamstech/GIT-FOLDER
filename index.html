@@ -183,6 +183,36 @@ nav {
   transform: translateY(-10px);
   background: #0f172a;
 }
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
+}
+.container {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 
@@ -191,11 +221,34 @@ nav {
   
 <h1>Horlamstech World</h1>
 <h2>Frontend Developer</h2>
+
 <p>I build simple and clean websites 🚀</p>
+
 <a href="https://wa.me/2347082882698">
   <button>Contact Me</button>
 </a>
+<footer>
+  <p>© 2026 Horlamstech world | Built with HTML & CSS</p>
+</footer>
+footer {
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center;
+  background: #020617;
+  color: white;
+  font-size: 14px;
+}
+
+a {
+  transition: 0.3s;
+}
 </body> 
+
+<div class="socials">
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+</div>
 
 <section id="about">
   <h2>About Me</h2>
@@ -233,4 +286,5 @@ nav {
   <p>Email: olamilekanadewale20@gmail.com</p>
 </section>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </html>
