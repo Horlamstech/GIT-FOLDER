@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<<nav>
+  <h2 class="logo">Horlams world</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+!DOCTYPE html>
 <html>
 <head>
   <title>My Git Project</title>
@@ -69,12 +78,49 @@ button {
 button:hover {
   background: #0ea5e9;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #020617;
+}
+
+.logo {
+  color: #38bdf8;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #38bdf8;
+}
+nav {
+  position: sticky;
+  top: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
   </style>
 </head>
 
 <body>
 <div class="container"></div> 
-  <h1>Horlamstech World</h1>
+  
+<h1>Horlamstech World</h1>
 <h2>Frontend Developer</h2>
 <p>I build simple and clean websites 🚀</p>
 <a href="https://wa.me/2347082882698">
@@ -82,17 +128,17 @@ button:hover {
 </a>
 </body> 
 
-<section class="about">
+<section id="about">
   <h2>About Me</h2>
   <p>I am a frontend developer learning Git and building real projects.</p>
 </section>
 
-<section class="projects">
+<section id="projects">
   <h2>Projects</h2>
   <p>Coming soon...</p>
 </section>
 
-<section class="contact">
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: olamilekanadewale20@gmail.com</p>
 </section>
