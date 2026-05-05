@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horlamstech World</title>
 
-  <!-- Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Google Font -->
@@ -22,7 +22,6 @@
     body {
       background: #0a192f;
       color: #ccd6f6;
-      line-height: 1.6;
     }
 
     /* NAVBAR */
@@ -69,7 +68,6 @@
     .hero {
       text-align: center;
       padding: 100px 20px;
-      animation: fadeIn 1.5s ease-in-out;
     }
 
     .hero h1 {
@@ -80,10 +78,6 @@
     .hero h2 {
       margin-top: 10px;
       color: #8892b0;
-    }
-
-    .hero p {
-      margin-top: 10px;
     }
 
     .btn {
@@ -110,13 +104,13 @@
     .socials a {
       color: white;
       margin: 0 10px;
-      font-size: 20px;
+      font-size: 22px;
       transition: 0.3s;
     }
 
     .socials a:hover {
       color: #38bdf8;
-      transform: scale(1.2);
+      transform: scale(1.3);
     }
 
     /* SECTIONS */
@@ -126,8 +120,8 @@
     }
 
     section h2 {
-      margin-bottom: 20px;
       color: #38bdf8;
+      margin-bottom: 20px;
     }
 
     /* PROJECTS */
@@ -136,7 +130,6 @@
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
-      margin-top: 40px;
     }
 
     .card {
@@ -166,9 +159,9 @@
       text-decoration: none;
     }
 
-    /* CONTACT FORM */
+    /* FORM */
     form {
-      max-width: 500px;
+      max-width: 400px;
       margin: auto;
       display: flex;
       flex-direction: column;
@@ -177,14 +170,8 @@
 
     input, textarea {
       padding: 12px;
-      border: none;
       border-radius: 6px;
-      outline: none;
-    }
-
-    textarea {
-      resize: none;
-      height: 120px;
+      border: none;
     }
 
     button {
@@ -200,38 +187,11 @@
       background: #0ea5e9;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
       background: #020617;
-      margin-top: 50px;
-      font-size: 14px;
       color: #8892b0;
-    }
-
-    /* ANIMATION */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* MOBILE */
-    @media(max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .hero h1 {
-        font-size: 35px;
-      }
     }
   </style>
 </head>
@@ -241,8 +201,8 @@
 <!-- NAVBAR -->
 <nav>
   <div class="logo">
-    <img src="logo.png" alt="">
-    Horlams World
+    <img src="logo.png" alt="Logo">
+    Horlamstech
   </div>
 
   <ul>
@@ -263,7 +223,12 @@
 
   <div class="socials">
     <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+
+    <!-- LINKEDIN ADDED -->
+    <a href="https://www.linkedin.com/in/olamilekan-adewale-15a799351/" target="_blank" title="My LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
     <a href="#"><i class="fab fa-twitter"></i></a>
   </div>
 </div>
@@ -271,7 +236,7 @@
 <!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a frontend developer learning Git and building real-world projects.</p>
+  <p>I am a frontend developer building real-world projects.</p>
 </section>
 
 <!-- PROJECTS -->
@@ -287,13 +252,13 @@
 
     <div class="card">
       <h3>Landing Page</h3>
-      <p>Clean business landing page</p>
+      <p>Business landing page design</p>
       <a href="#">View</a>
     </div>
 
     <div class="card">
       <h3>Coming Soon</h3>
-      <p>More projects loading...</p>
+      <p>More projects on the way 🚀</p>
       <a href="#">View</a>
     </div>
   </div>
