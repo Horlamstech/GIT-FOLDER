@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -20,7 +20,6 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  scroll-behavior:smooth;
 }
 
 body{
@@ -43,39 +42,19 @@ nav{
   z-index:1000;
 }
 
-/* LOGO */
 .logo{
   display:flex;
   align-items:center;
   gap:10px;
 }
 
-.logo-icon{
+.logo img{
   width:40px;
-  height:40px;
-  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:8px;
-  font-weight:bold;
-  color:black;
 }
 
 .logo-text{
+  color:var(--accent);
   font-weight:600;
-  font-size:18px;
-  color:var(--accent);
-}
-
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:var(--text);
-}
-
-nav a:hover{
-  color:var(--accent);
 }
 
 /* HERO */
@@ -86,11 +65,16 @@ nav a:hover{
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
+  padding-top:80px;
+}
+
+.hero img{
+  width:120px;
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:48px;
+  font-size:42px;
 }
 
 .hero span{
@@ -104,18 +88,13 @@ nav a:hover{
 }
 
 .btn{
-  margin:10px;
+  margin-top:20px;
   padding:12px 20px;
   background:var(--accent);
   color:black;
   text-decoration:none;
   border-radius:6px;
   font-weight:600;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.05);
 }
 
 /* SECTION */
@@ -125,24 +104,18 @@ section{
   margin:auto;
 }
 
-h2{
-  margin-bottom:20px;
-}
-
-/* SKILLS */
 .skills{
   display:flex;
   flex-wrap:wrap;
-  gap:15px;
+  gap:10px;
 }
 
 .skill{
   background:var(--card);
-  padding:10px 15px;
+  padding:8px 14px;
   border-radius:6px;
 }
 
-/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -155,18 +128,15 @@ h2{
   border-radius:10px;
 }
 
-/* CONTACT */
 .contact-buttons{
   display:flex;
+  gap:10px;
   flex-wrap:wrap;
-  gap:15px;
-  margin-top:20px;
 }
 
-/* FOOTER */
 footer{
   text-align:center;
-  padding:30px;
+  padding:20px;
   color:var(--muted);
 }
 </style>
@@ -176,7 +146,7 @@ footer{
 
 <nav>
   <div class="logo">
-    <div class="logo-icon">H</div>
+    <img src="logo.png" alt="logo">
     <div class="logo-text">Horlamstech World</div>
   </div>
 
@@ -190,8 +160,10 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
+  <img src="logo.png" alt="logo">
+
   <h1>Hi, I'm <span>Olamilekan</span></h1>
-  <p>I build responsive and user-focused web applications using HTML, CSS, and JavaScript.</p>
+  <p>I build responsive and modern websites that deliver great user experience.</p>
 
   <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Hire Me</a>
 </div>
@@ -200,8 +172,8 @@ footer{
 <section id="about">
   <h2>About Me</h2>
   <p>
-    Welcome to Horlamstech World. I’m a passionate web developer who enjoys building
-    clean, modern, and user-friendly websites.
+    Welcome to Horlamstech World. I create clean, modern and responsive websites
+    that help ideas come to life.
   </p>
 </section>
 
@@ -212,32 +184,24 @@ footer{
     <div class="skill">HTML</div>
     <div class="skill">CSS</div>
     <div class="skill">JavaScript</div>
-    <div class="skill">Git & GitHub</div>
-    <div class="skill">Responsive Design</div>
+    <div class="skill">Git</div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
-
   <div class="projects">
 
     <div class="card">
       <h3>To-Do App</h3>
-      <p>A simple task manager built with JavaScript.</p>
+      <p>Simple task manager.</p>
       <a href="#" class="btn">Live Demo</a>
     </div>
 
     <div class="card">
       <h3>Landing Page</h3>
-      <p>A responsive business landing page.</p>
-      <a href="#" class="btn">Live Demo</a>
-    </div>
-
-    <div class="card">
-      <h3>Website Clone</h3>
-      <p>A clone of a modern website UI.</p>
+      <p>Business website design.</p>
       <a href="#" class="btn">Live Demo</a>
     </div>
 
@@ -246,8 +210,7 @@ footer{
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact Me</h2>
-  <p>Reach out through any platform:</p>
+  <h2>Contact</h2>
 
   <div class="contact-buttons">
     <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Email</a>
