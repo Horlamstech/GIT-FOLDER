@@ -78,7 +78,6 @@ nav.scrolled{
   font-size:14px;
 }
 
-/* underline hover */
 .menu a::after{
   content:"";
   position:absolute;
@@ -94,7 +93,6 @@ nav.scrolled{
   width:100%;
 }
 
-/* ACTIVE LINK */
 .menu a.active{
   color:var(--accent);
 }
@@ -139,6 +137,7 @@ nav.scrolled{
   text-decoration:none;
   border-radius:6px;
   font-weight:600;
+  display:inline-block;
 }
 
 /* SECTIONS */
@@ -172,10 +171,35 @@ section{
   border-radius:10px;
 }
 
+/* CONTACT FORM */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:20px;
+  max-width:500px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:12px;
+  border-radius:6px;
+  border:none;
+  background:#0f172a;
+  color:white;
+  outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border:1px solid #38bdf8;
+}
+
 .contact-buttons{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
+  margin-top:20px;
 }
 
 footer{
@@ -261,17 +285,26 @@ footer{
   </div>
 </section>
 
+<!-- CONTACT WITH FORM -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2>Contact Me</h2>
+  <p style="color:#94a3b8;">Send me a message directly 👇</p>
+
+  <form action="https://formspree.io/f/mojrdrye" method="POST" class="contact-form">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+  </form>
 
   <div class="contact-buttons">
     <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Email</a>
-    
-    <a href="https://www.linkedin.com/in/olamilekan-adewale-15a799351/" 
-       target="_blank" class="btn">LinkedIn</a>
-    
-    <a href="https://github.com/Horlamstech" 
-       target="_blank" class="btn">GitHub</a>
+    <a href="https://www.linkedin.com/in/olamilekan-adewale-15a799351/" target="_blank" class="btn">LinkedIn</a>
+    <a href="https://github.com/Horlamstech" target="_blank" class="btn">GitHub</a>
   </div>
 </section>
 
@@ -284,7 +317,6 @@ function toggleMenu(){
   document.getElementById("menu").classList.toggle("show");
 }
 
-/* shrink navbar on scroll */
 window.addEventListener("scroll", function(){
   document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
 });
