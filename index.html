@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -38,23 +38,45 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 40px;
+  padding:15px 25px;
   z-index:1000;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
 }
 
 .logo img{
-  width:40px;
+  width:32px;
 }
 
 .logo-text{
   color:var(--accent);
   font-weight:600;
+  font-size:16px;
+}
+
+/* MENU BUTTON STYLE */
+.menu{
+  display:flex;
+  gap:10px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:var(--text);
+  padding:8px 14px;
+  border-radius:6px;
+  border:1px solid #1e293b;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  background:var(--accent);
+  color:black;
 }
 
 /* HERO */
@@ -66,11 +88,6 @@ nav{
   align-items:center;
   text-align:center;
   padding-top:80px;
-}
-
-.hero img{
-  width:120px;
-  margin-bottom:20px;
 }
 
 .hero h1{
@@ -150,7 +167,7 @@ footer{
     <div class="logo-text">Horlamstech World</div>
   </div>
 
-  <div>
+  <div class="menu">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -160,8 +177,6 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="logo.png" alt="logo">
-
   <h1>Hi, I'm <span>Olamilekan</span></h1>
   <p>I build responsive and modern websites that deliver great user experience.</p>
 
