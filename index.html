@@ -1,298 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horlamstech World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olamilekan Adewale | Portfolio</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+        header {
+            background: #020617;
+            padding: 20px;
+            text-align: center;
+        }
 
-    body {
-      background: #0a192f;
-      color: #ccd6f6;
-    }
+        header h1 {
+            margin: 0;
+        }
 
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      background: #020617;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        nav a {
+            margin: 0 10px;
+            color: #38bdf8;
+            text-decoration: none;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #38bdf8;
-      font-size: 20px;
-    }
+        section {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
 
-    .logo img {
-      width: 40px;
-    }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #38bdf8;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #38bdf8;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-      animation: fadeIn 1.5s ease;
-    }
-
-    .hero h1 {
-      font-size: 50px;
-      color: #38bdf8;
-    }
-
-    .hero h2 {
-      color: #8892b0;
-      margin-top: 10px;
-    }
-
-    .hero p {
-      margin-top: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background: #38bdf8;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #0ea5e9;
-    }
-
-    /* SOCIALS */
-    .socials {
-      margin-top: 25px;
-    }
-
-    .socials a {
-      color: white;
-      margin: 0 10px;
-      font-size: 22px;
-      transition: 0.3s;
-    }
-
-    .socials a:hover {
-      color: #38bdf8;
-      transform: scale(1.2);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      margin-bottom: 15px;
-      color: #38bdf8;
-    }
-
-    /* PROJECTS */
-    .projects {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #020617;
-      padding: 20px;
-      border-radius: 10px;
-      width: 260px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      background: #0f172a;
-    }
-
-    .card h3 {
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      background: #38bdf8;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-
-    /* CONTACT FORM */
-    form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    textarea {
-      resize: none;
-      height: 120px;
-    }
-
-    button {
-      background: #38bdf8;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0ea5e9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      margin-top: 50px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+            margin-top: 40px;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <h2 class="logo">
-    <img src="logo.png" alt="logo">
-    Horlams world
-  </h2>
+<header>
+    <h1>Olamilekan Adewale</h1>
+    <p>Web Developer</p>
 
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Horlamstech World</h1>
-  <h2>Frontend Developer</h2>
-  <p>I build simple and clean websites 🚀</p>
-
-  <a href="https://wa.me/2347082882698" class="btn">Contact Me</a>
-
-  <div class="socials">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/olamilekan-adewale-15a799351/" target="_blank">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-</div>
-
-<!-- ABOUT -->
 <section id="about">
-  <h2>About Me</h2>
-  <p>I am a frontend developer learning Git and building real projects.</p>
+    <h2>About Me</h2>
+    <p>I am a passionate web developer focused on building clean and responsive websites.</p>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
-  <h2>Projects</h2>
-
-  <div class="projects">
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>Personal portfolio built with HTML & CSS.</p>
-      <a href="#">View</a>
-    </div>
-
-    <div class="card">
-      <h3>Landing Page</h3>
-      <p>Clean business landing page.</p>
-      <a href="#">View</a>
-    </div>
-
-    <div class="card">
-      <h3>Coming Soon</h3>
-      <p>More projects coming 🚀</p>
-      <a href="#">View</a>
-    </div>
-  </div>
+    <h2>Projects</h2>
+    <p>Coming soon...</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact Me</h2>
+    <h2>Contact</h2>
+    <p>Email: your-email@example.com</p>
 
-  <form action="https://formspree.io/f/mojrdrye" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+    <a class="btn" href="https://www.linkedin.com/in/olamilekan-adewale-15a799351/" target="_blank">
+        View My LinkedIn
+    </a>
 </section>
 
 <footer>
-  <p>© 2026 Horlamstech. All rights reserved.</p>
+    <p>© 2026 Olamilekan Adewale</p>
 </footer>
 
 </body>
