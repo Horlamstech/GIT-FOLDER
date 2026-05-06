@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To-Do App</title>
+<style>
+body{
+  font-family:sans-serif;
+  background:#020617;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.container{
+  background:#0f172a;
+  padding:20px;
+  border-radius:10px;
+  width:300px;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  background:#38bdf8;
+  border:none;
+  cursor:pointer;
+}
+
+li{
+  margin-top:10px;
+  display:flex;
+  justify-content:space-between;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>To-Do App</h2>
+
+  <input id="task" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+
+  <ul id="list"></ul>
+</div>
+
+<script>
+function addTask(){
+  let task = document.getElementById("task").value;
+  if(task === "") return;
+
+  let li = document.createElement("li");
+  li.innerHTML = task + " <button onclick='this.parentElement.remove()'>X</button>";
+
+  document.getElementById("list").appendChild(li);
+  document.getElementById("task").value="";
+}
+</script>
+
+</body>
+</html>
