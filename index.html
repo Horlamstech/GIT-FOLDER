@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Horlamstech World | Olamilekan Adewale</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@ body{
   color:var(--text);
 }
 
+/* NAV */
 nav{
   position:fixed;
   width:100%;
@@ -37,7 +38,6 @@ nav{
   backdrop-filter:blur(10px);
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:15px 40px;
   z-index:1000;
 }
@@ -50,13 +50,13 @@ nav a{
   margin-left:20px;
   text-decoration:none;
   color:var(--text);
-  font-size:14px;
 }
 
 nav a:hover{
   color:var(--accent);
 }
 
+/* HERO */
 .hero{
   height:100vh;
   display:flex;
@@ -68,7 +68,7 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:50px;
+  font-size:48px;
 }
 
 .hero span{
@@ -82,20 +82,16 @@ nav a:hover{
 }
 
 .btn{
-  margin-top:25px;
-  padding:12px 22px;
-  border-radius:6px;
+  margin:10px;
+  padding:12px 20px;
   background:var(--accent);
   color:black;
   text-decoration:none;
+  border-radius:6px;
   font-weight:600;
-  transition:0.3s;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-}
-
+/* SECTION */
 section{
   padding:80px 20px;
   max-width:1100px;
@@ -104,14 +100,9 @@ section{
 
 h2{
   margin-bottom:20px;
-  font-size:28px;
 }
 
-.about p{
-  color:var(--muted);
-  line-height:1.7;
-}
-
+/* SKILLS */
 .skills{
   display:flex;
   flex-wrap:wrap;
@@ -120,11 +111,11 @@ h2{
 
 .skill{
   background:var(--card);
-  padding:10px 16px;
+  padding:10px 15px;
   border-radius:6px;
-  border:1px solid #1e293b;
 }
 
+/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -135,18 +126,15 @@ h2{
   background:var(--card);
   padding:20px;
   border-radius:10px;
-  border:1px solid #1e293b;
-  transition:0.3s;
 }
 
-.card:hover{
-  transform:translateY(-5px);
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  color:var(--accent);
 }
 
-.contact p{
-  color:var(--muted);
-}
-
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px;
@@ -167,24 +155,26 @@ footer{
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <h1>Hi, I'm <span>Olamilekan</span></h1>
-  <p>I design and build modern, responsive websites that feel fast, clean, and professional.</p>
+  <p>I build responsive and user-focused web applications using HTML, CSS, and JavaScript.</p>
 
-  <a href="mailto:olamilekanadewale20@gmail.com" class="btn">
-    Hire Me
-  </a>
+  <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Hire Me</a>
+  <a href="#" class="btn">Download CV</a>
 </div>
 
-<section id="about" class="about">
+<!-- ABOUT -->
+<section id="about">
   <h2>About Me</h2>
   <p>
-    Welcome to Horlamstech World. I’m a web developer passionate about creating clean,
-    user-friendly, and responsive web experiences. I enjoy turning ideas into real
-    digital products that people can use and enjoy.
+    Welcome to Horlamstech World. I’m a passionate web developer who enjoys building
+    clean, modern, and user-friendly websites. I focus on performance, responsiveness,
+    and delivering great user experiences.
   </p>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills">
@@ -196,34 +186,43 @@ footer{
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
+
   <div class="projects">
 
     <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>A modern personal portfolio showcasing my work and skills.</p>
+      <h3>To-Do App</h3>
+      <p>A simple task manager built with JavaScript.</p>
+      <a href="#">Live Demo</a>
     </div>
 
     <div class="card">
-      <h3>Upcoming Projects</h3>
-      <p>More real-world projects coming soon. Stay tuned.</p>
+      <h3>Landing Page</h3>
+      <p>A responsive business landing page.</p>
+      <a href="#">Live Demo</a>
+    </div>
+
+    <div class="card">
+      <h3>Website Clone</h3>
+      <p>A clone of a modern website UI.</p>
+      <a href="#">Live Demo</a>
     </div>
 
   </div>
 </section>
 
-<section id="contact" class="contact">
+<!-- CONTACT -->
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: olamilekanadewale20@gmail.com</p>
-
-  <a href="mailto:olamilekanadewale20@gmail.com" class="btn">
-    Send Message
-  </a>
+  <p>GitHub: https://github.com/Horlamstech</p>
+  <p>LinkedIn: https://www.linkedin.com/in/olamilekan-adewale-15a799351/</p>
 </section>
 
 <footer>
-  <p>© 2026 Horlamstech World. All rights reserved.</p>
+  <p>© 2026 Horlamstech World</p>
 </footer>
 
 </body>
