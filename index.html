@@ -75,14 +75,13 @@ nav.scrolled{
   text-decoration:none;
   color:var(--text);
   position:relative;
-  font-size:14px;
 }
 
 .menu a::after{
   content:"";
   position:absolute;
-  left:0;
   bottom:-5px;
+  left:0;
   width:0%;
   height:2px;
   background:var(--accent);
@@ -91,17 +90,6 @@ nav.scrolled{
 
 .menu a:hover::after{
   width:100%;
-}
-
-.menu a.active{
-  color:var(--accent);
-}
-
-/* HAMBURGER */
-.hamburger{
-  display:none;
-  font-size:24px;
-  cursor:pointer;
 }
 
 /* HERO */
@@ -115,20 +103,18 @@ nav.scrolled{
   padding-top:80px;
 }
 
-.hero h1{
-  font-size:42px;
+.hero h1,
+.hero p,
+.hero .btn{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 1s ease forwards;
 }
 
-.hero span{
-  color:var(--accent);
-}
+.hero p{ animation-delay:0.3s; }
+.hero .btn{ animation-delay:0.6s; }
 
-.hero p{
-  margin-top:15px;
-  color:var(--muted);
-  max-width:600px;
-}
-
+/* BUTTON */
 .btn{
   margin-top:20px;
   padding:12px 20px;
@@ -137,7 +123,11 @@ nav.scrolled{
   text-decoration:none;
   border-radius:6px;
   font-weight:600;
-  display:inline-block;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
 }
 
 /* SECTIONS */
@@ -147,6 +137,19 @@ section{
   margin:auto;
 }
 
+/* SCROLL ANIMATION */
+.hidden{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.6s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* SKILLS */
 .skills{
   display:flex;
   flex-wrap:wrap;
@@ -159,6 +162,7 @@ section{
   border-radius:6px;
 }
 
+/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -169,9 +173,14 @@ section{
   background:var(--card);
   padding:20px;
   border-radius:10px;
+  transition:0.3s;
 }
 
-/* CONTACT FORM */
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* CONTACT */
 .contact-form{
   display:flex;
   flex-direction:column;
@@ -187,46 +196,34 @@ section{
   border:none;
   background:#0f172a;
   color:white;
-  outline:none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-  border:1px solid #38bdf8;
 }
 
 .contact-buttons{
   display:flex;
   gap:10px;
-  flex-wrap:wrap;
   margin-top:20px;
+  flex-wrap:wrap;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
   color:var(--muted);
 }
 
+/* ANIMATION KEYFRAME */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .menu{
-    position:absolute;
-    top:70px;
-    right:20px;
-    background:var(--card);
-    flex-direction:column;
-    padding:15px;
-    border-radius:10px;
     display:none;
-  }
-
-  .menu.show{
-    display:flex;
-  }
-
-  .hamburger{
-    display:block;
   }
 }
 </style>
@@ -236,32 +233,30 @@ footer{
 
 <nav id="navbar">
   <div class="logo">
-    <img src="logo.png" alt="logo">
+    <img src="logo.png">
     <div class="logo-text">Horlamstech World</div>
   </div>
 
-  <div class="menu" id="menu">
+  <div class="menu">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
-
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
 
 <div class="hero">
-  <h1>Hi, I'm <span>Olamilekan</span></h1>
+  <h1>Hi, I'm <span style="color:#38bdf8;">Olamilekan</span></h1>
   <p>I build responsive and modern websites that deliver great user experience.</p>
   <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Hire Me</a>
 </div>
 
-<section id="about">
+<section id="about" class="hidden">
   <h2>About Me</h2>
   <p>I create clean, modern and responsive websites that bring ideas to life.</p>
 </section>
 
-<section id="skills">
+<section id="skills" class="hidden">
   <h2>Skills</h2>
   <div class="skills">
     <div class="skill">HTML</div>
@@ -271,7 +266,7 @@ footer{
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="hidden">
   <h2>Projects</h2>
   <div class="projects">
     <div class="card">
@@ -285,19 +280,13 @@ footer{
   </div>
 </section>
 
-<!-- CONTACT WITH FORM -->
-<section id="contact">
+<section id="contact" class="hidden">
   <h2>Contact Me</h2>
-  <p style="color:#94a3b8;">Send me a message directly 👇</p>
 
   <form action="https://formspree.io/f/mojrdrye" method="POST" class="contact-form">
-
     <input type="text" name="name" placeholder="Your Name" required>
-
     <input type="email" name="email" placeholder="Your Email" required>
-
     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-
     <button type="submit" class="btn">Send Message</button>
   </form>
 
@@ -313,10 +302,18 @@ footer{
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("show");
-}
+// scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
 
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+// navbar shrink
 window.addEventListener("scroll", function(){
   document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
 });
