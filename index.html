@@ -38,11 +38,33 @@ nav{
   backdrop-filter:blur(10px);
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:15px 40px;
   z-index:1000;
 }
 
-nav h2{
+/* LOGO */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-icon{
+  width:40px;
+  height:40px;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  font-weight:bold;
+  color:black;
+}
+
+.logo-text{
+  font-weight:600;
+  font-size:18px;
   color:var(--accent);
 }
 
@@ -89,6 +111,11 @@ nav a:hover{
   text-decoration:none;
   border-radius:6px;
   font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
 }
 
 /* SECTION */
@@ -128,10 +155,12 @@ h2{
   border-radius:10px;
 }
 
-.card a{
-  display:inline-block;
-  margin-top:10px;
-  color:var(--accent);
+/* CONTACT */
+.contact-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:20px;
 }
 
 /* FOOTER */
@@ -146,7 +175,11 @@ footer{
 <body>
 
 <nav>
-  <h2>Horlamstech World</h2>
+  <div class="logo">
+    <div class="logo-icon">H</div>
+    <div class="logo-text">Horlamstech World</div>
+  </div>
+
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -161,7 +194,6 @@ footer{
   <p>I build responsive and user-focused web applications using HTML, CSS, and JavaScript.</p>
 
   <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Hire Me</a>
-  <a href="#" class="btn">Download CV</a>
 </div>
 
 <!-- ABOUT -->
@@ -169,8 +201,7 @@ footer{
   <h2>About Me</h2>
   <p>
     Welcome to Horlamstech World. I’m a passionate web developer who enjoys building
-    clean, modern, and user-friendly websites. I focus on performance, responsiveness,
-    and delivering great user experiences.
+    clean, modern, and user-friendly websites.
   </p>
 </section>
 
@@ -195,19 +226,19 @@ footer{
     <div class="card">
       <h3>To-Do App</h3>
       <p>A simple task manager built with JavaScript.</p>
-      <a href="#">Live Demo</a>
+      <a href="#" class="btn">Live Demo</a>
     </div>
 
     <div class="card">
       <h3>Landing Page</h3>
       <p>A responsive business landing page.</p>
-      <a href="#">Live Demo</a>
+      <a href="#" class="btn">Live Demo</a>
     </div>
 
     <div class="card">
       <h3>Website Clone</h3>
       <p>A clone of a modern website UI.</p>
-      <a href="#">Live Demo</a>
+      <a href="#" class="btn">Live Demo</a>
     </div>
 
   </div>
@@ -215,10 +246,14 @@ footer{
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: olamilekanadewale20@gmail.com</p>
-  <p>GitHub: https://github.com/Horlamstech</p>
-  <p>LinkedIn: https://www.linkedin.com/in/olamilekan-adewale-15a799351/</p>
+  <h2>Contact Me</h2>
+  <p>Reach out through any platform:</p>
+
+  <div class="contact-buttons">
+    <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Email</a>
+    <a href="https://www.linkedin.com/in/olamilekan-adewale-15a799351/" target="_blank" class="btn">LinkedIn</a>
+    <a href="https://github.com/Horlamstech" target="_blank" class="btn">GitHub</a>
+  </div>
 </section>
 
 <footer>
