@@ -20,6 +20,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
 body{
@@ -28,55 +29,81 @@ body{
   color:var(--text);
 }
 
-/* NAV */
+/* NAVBAR */
 nav{
   position:fixed;
-  width:100%;
   top:0;
-  background:rgba(2,6,23,0.7);
-  backdrop-filter:blur(10px);
+  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 25px;
+  padding:18px 30px;
+  background:rgba(2,6,23,0.6);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
   z-index:1000;
 }
 
+nav.scrolled{
+  padding:12px 30px;
+}
+
+/* LOGO */
 .logo{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:10px;
 }
 
 .logo img{
-  width:32px;
+  width:35px;
 }
 
 .logo-text{
   color:var(--accent);
   font-weight:600;
-  font-size:16px;
 }
 
-/* MENU BUTTON STYLE */
+/* MENU */
 .menu{
   display:flex;
-  gap:10px;
+  gap:25px;
 }
 
 .menu a{
   text-decoration:none;
   color:var(--text);
-  padding:8px 14px;
-  border-radius:6px;
-  border:1px solid #1e293b;
+  position:relative;
   font-size:14px;
+}
+
+/* underline hover */
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0%;
+  height:2px;
+  background:var(--accent);
   transition:0.3s;
 }
 
-.menu a:hover{
-  background:var(--accent);
-  color:black;
+.menu a:hover::after{
+  width:100%;
+}
+
+/* ACTIVE LINK */
+.menu a.active{
+  color:var(--accent);
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
 }
 
 /* HERO */
@@ -114,7 +141,7 @@ nav{
   font-weight:600;
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
   padding:80px 20px;
   max-width:1100px;
@@ -156,43 +183,60 @@ footer{
   padding:20px;
   color:var(--muted);
 }
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu{
+    position:absolute;
+    top:70px;
+    right:20px;
+    background:var(--card);
+    flex-direction:column;
+    padding:15px;
+    border-radius:10px;
+    display:none;
+  }
+
+  .menu.show{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<nav>
+<nav id="navbar">
   <div class="logo">
     <img src="logo.png" alt="logo">
     <div class="logo-text">Horlamstech World</div>
   </div>
 
-  <div class="menu">
+  <div class="menu" id="menu">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <h1>Hi, I'm <span>Olamilekan</span></h1>
   <p>I build responsive and modern websites that deliver great user experience.</p>
-
   <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Hire Me</a>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>
-    Welcome to Horlamstech World. I create clean, modern and responsive websites
-    that help ideas come to life.
-  </p>
+  <p>I create clean, modern and responsive websites that bring ideas to life.</p>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills">
@@ -203,33 +247,24 @@ footer{
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-
     <div class="card">
       <h3>To-Do App</h3>
       <p>Simple task manager.</p>
-      <a href="#" class="btn">Live Demo</a>
     </div>
-
     <div class="card">
       <h3>Landing Page</h3>
       <p>Business website design.</p>
-      <a href="#" class="btn">Live Demo</a>
     </div>
-
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
-
   <div class="contact-buttons">
     <a href="mailto:olamilekanadewale20@gmail.com" class="btn">Email</a>
-    <a href="https://www.linkedin.com/in/olamilekan-adewale-15a799351/" target="_blank" class="btn">LinkedIn</a>
     <a href="https://github.com/Horlamstech" target="_blank" class="btn">GitHub</a>
   </div>
 </section>
@@ -237,6 +272,17 @@ footer{
 <footer>
   <p>© 2026 Horlamstech World</p>
 </footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+
+/* shrink navbar on scroll */
+window.addEventListener("scroll", function(){
+  document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
 
 </body>
 </html>
