@@ -73,7 +73,7 @@ li button{
 <script>
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-// Load tasks when page opens
+// Load tasks on page load
 window.onload = function(){
   tasks.forEach(task => createTaskElement(task));
 };
@@ -101,9 +101,10 @@ function createTaskElement(task){
   btn.textContent = "X";
 
   btn.onclick = function(){
-    li.remove();
-    tasks = tasks.filter(t => t !== task);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    li.remove(); // remove from UI
+
+    tasks = tasks.filter(t => t !== task); // remove from array
+    localStorage.setItem("tasks", JSON.stringify(tasks)); // update storage
   };
 
   li.appendChild(span);
