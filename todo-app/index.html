@@ -71,16 +71,45 @@ li button{
 </div>
 
 <script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+// Load tasks when page opens
+window.onload = function(){
+  tasks.forEach(task => createTaskElement(task));
+};
+
 function addTask(){
-  let task = document.getElementById("task").value;
+  let taskInput = document.getElementById("task");
+  let task = taskInput.value;
 
   if(task === "") return;
 
+  tasks.push(task);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  createTaskElement(task);
+  taskInput.value = "";
+}
+
+function createTaskElement(task){
   let li = document.createElement("li");
-  li.innerHTML = task + " <button onclick='this.parentElement.remove()'>X</button>";
+
+  let span = document.createElement("span");
+  span.textContent = task;
+
+  let btn = document.createElement("button");
+  btn.textContent = "X";
+
+  btn.onclick = function(){
+    li.remove();
+    tasks = tasks.filter(t => t !== task);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  };
+
+  li.appendChild(span);
+  li.appendChild(btn);
 
   document.getElementById("list").appendChild(li);
-  document.getElementById("task").value="";
 }
 </script>
 
